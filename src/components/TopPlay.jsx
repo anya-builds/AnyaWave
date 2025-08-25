@@ -7,7 +7,8 @@ import { FreeMode } from 'swiper';
 
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
-import { useGetTopChartsQuery } from '../redux/services/shazamCore';
+// import { useGetTopChartsQuery } from '../redux/services/shazamCore';
+import { useGetWorldChartsQuery } from '../redux/services/shazamCore';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -43,7 +44,7 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
 const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data } = useGetTopChartsQuery();
+  const { data } = useGetWorldChartsQuery();
   const divRef = useRef(null);
 
   useEffect(() => {
