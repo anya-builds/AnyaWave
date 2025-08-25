@@ -12,12 +12,6 @@ fetch('https://shazam-core.p.rapidapi.com/v1/charts/world?country_code=IN', opti
   .then(response => console.log(response))
   .catch(err => console.error(err));
 
-  export const {
-  useGetTopChartsQuery,
-  useGetSongsByGenreQuery,
-  useGetSongsByCountryQuery,
-  useGetSongsBySearchQuery,
-  useGetArtistDetailsQuery,
-  useGetSongDetailsQuery,
-  useGetSongRelatedQuery,
-} = shazamCoreApi;
+export const shazamCoreApi=createApi({
+    reducerPath:'shazamCoreApi',
+});
